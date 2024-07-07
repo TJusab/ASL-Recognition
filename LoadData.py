@@ -1,13 +1,22 @@
 import pickle
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Load the data from the pickle file
 with open('data.pickle', 'rb') as f:
     data_dict = pickle.load(f)
 
+data = np.array(data_dict['data'])
+labels = np.array(data_dict['labels'])
+
+print(f'Data shape: {data.shape}')
+print(f'Labels shape: {labels.shape}')
+
 # Extract data and labels
 data = data_dict['data']
 labels = data_dict['labels']
+
+
 
 ranges = {'a': [], 'b': [], 'c': []}
 
