@@ -46,6 +46,11 @@ colors = ['red', 'blue', 'green', 'yellow', 'orange', 'pink', 'purple']
 
 plt.figure(figsize=(8, 8))
 
+# Print inconsistent data
+inconsistent_data_indices = [2, 10, 21, 25, 30, 40, 48, 60, 62, 66, 69, 90, 94, 200, 206, 209, 218, 226, 228, 235, 254, 260, 263, 266, 276, 277, 278, 279, 280, 282, 284, 286, 289, 292, 295, 298, 299]
+for i in inconsistent_data_indices:
+    print(f"Inconsistent data length: {len(data[i])}")
+
 # Plot the data of the letter 'a'
 for i in range(len(labels)):
     if labels[i] == label_to_plot:
