@@ -51,8 +51,9 @@ for dir_ in os.listdir(DATA_DIR):
                     data_aux.append(x - min(x_))
                     data_aux.append(y - min(y_))
 
-            data.append(data_aux)
-            labels.append(dir_)
+            if len(data_aux) == 42:
+                data.append(data_aux)
+                labels.append(dir_)
 
 with open('data.pickle', 'wb') as f:
     pickle.dump({'data': data, 'labels': labels}, f)
