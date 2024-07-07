@@ -35,7 +35,13 @@ model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-history = model.fix(x_train, y_train, epochs=10, validation_data=(x_test, y_test))
+history = model.fit(x_train, y_train, epochs=10, validation_data=(x_test, y_test))
 
 loss, accuracy = model.evaluate(x_test, y_test)
 print(f'Test accuracy: {accuracy}')
+
+model.save('./model.keras')
+model_dict = {'model_path': './model.keras'}
+with open('model.p', 'wb') as f:
+    pickle.dump(model_dict, f)
+
